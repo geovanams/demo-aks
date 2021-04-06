@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "demoaks"
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: "demoaks"
+  template: 
+    metadata: 
+      labels:
+        app: "demoaks"
+    spec: 
+      containers:
+      - name: demoaks
+        image: geovanams/demo-aks:latest
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: "demoaksservice"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector: 
+    app: "demoaks"
+
+
