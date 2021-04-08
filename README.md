@@ -1,5 +1,10 @@
 # Tutorial - Implantar um Cluster AKS
 
+<h2>Pré-requisito</h2>
+
+* Conta do Azure
+  * Caso não tenha uma, crie em: https://azure.microsoft.com/pt-br/free/
+  
 <h2>Objetivo</h2>
 
 * Criar e implantar um cluster AKS
